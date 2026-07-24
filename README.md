@@ -17,7 +17,7 @@ npx skills add https://github.com/timeRATE-966/zhihu-research-page-skill
 ## 用例
 
 ```
-/ zhihu-research-page 执行5%版本
+/ zhihu-research-page 执行2%版本
 主题：什么是 Harness Engineering？
 
 / zhihu-research-page 执行100%的v2版本
