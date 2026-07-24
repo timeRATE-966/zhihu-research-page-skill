@@ -1,7 +1,33 @@
 ---
 name: zhihu-research-page
+version: "21.0.0"
+title: "知乎研究页生成器 — 一句话生成知乎高质量回答网页"
+author: "timeRATE-966"
 description: 通过大规模联网搜索自动创建知乎风格的深度知识网页，样式高度还原 zhihu.com。生成 10 个章节的多答主模拟回答页面，含 ≥10 万有效中文字和 ≥500 次真实搜索引用。支持手动裁剪为任意比例版本（如"执行 5% 版本"→ ≥5 千字 / ≥25 次搜索），多次执行自动创建带版本号的独立文件夹。适用于生成知识专题页、学习路径教程、产品深度百科、行业研究报告等需要系统整理某一主题知识的场景。
 **[重要]100%版本约需 100 分钟且token消耗巨大，建议先生成 2% 版本检验效果**
+type: "agent"
+category: "research"
+invocation: "/zhihu-research-page"
+tags:
+  - "research"
+  - "content-creation"
+  - "web-generation"
+  - "chinese"
+  - "knowledge-base"
+difficulty: "intermediate"
+claude_version: ">=1.0.0"
+permissions:
+  read:
+    - "project files"
+    - "web content"
+  write:
+    - "project files"
+  network: "extensive"
+examples:
+  - input: "/zhihu-research-page 执行2%版本\n主题：什么是 Harness Engineering？"
+    output: "自动搜索 ≥10 次，生成 3 章节知乎风网页（约 2,000 字），约 2 分钟"
+  - input: "/zhihu-research-page 执行100%版本\n主题：国际象棋怎么学？"
+    output: "自动搜索 ≥500 次，生成 10 章节完整深度网页（≥100,000 字），约 100 分钟"
 ---
 
 <!-- VERSION:v21 | 2026-07-21 | 教程模式+自动同步+版本头 -->
