@@ -1,6 +1,6 @@
 ---
 name: zhihu-research-page
-description: 通过大规模联网搜索自动创建知乎风格的深度知识网页，样式高度还原 zhihu.com。生成 10 个章节的多答主模拟回答页面，含 ≥10 万有效中文字和 ≥500 次真实搜索引用。支持手动裁剪为任意比例版本（如"执�� 5% 版本"→ ≥5 千字 / ≥25 次搜索），多次执行自动创建带版本号的独立文件夹。适用于生成知识专题页、学习路径教程、产品深度百科、行业研究报告等需要系统整理某一主题知识的场景。
+description: 通过大规模联网搜索自动创建知乎风格的深度知识网页，样式高度还原 zhihu.com。生成 10 个章节的多答主模拟回答页面，含 ≥10 万有效中文字和 ≥500 次真实搜索引用。支持手动裁剪为任意比例版本（如"执行 5% 版本"→ ≥5 千字 / ≥25 次搜索），多次执行自动创建带版本号的独立文件夹。适用于生成知识专题页、学习路径教程、产品深度百科、行业研究报告等需要系统整理某一主题知识的场景。
 **[重要]100%版本约需 100 分钟且token消耗巨大，建议先生成 2% 版本检验效果**
 ---
 
@@ -449,7 +449,7 @@ if agents_per_round == 0:
 
 **执行方式**：
 - 第 1 轮：3 个代理 × 72 次 = 216 次（如配额足够）
-- 第 2 轮：另 3 个代理（剩余配额允许时）
+- 第 2 轮：另 3 个代理（剩余配额允许���）
 - 第 3 轮：剩余代理
 - 每轮串行等待完成后再启动下一轮，避免同时触顶的 token 空转
 - 官方文档（espressif、arduino、github docs 等）优先用 `WebFetch` 抓取——不计入搜索配额
@@ -462,7 +462,6 @@ if agents_per_round == 0:
 prompt = open('<skill_dir>/templates/search_agent_prompt.md', encoding='utf-8').read()
 prompt = prompt.replace('{direction}', agent_direction)
 ```
-
 
 **子代理完成验收标准（重要）**：
 - ⚠️ task-notification 元数据声明（"搜索 85 次"等）不可信——实际文件状态才是真相
@@ -481,7 +480,7 @@ prompt = prompt.replace('{direction}', agent_direction)
 ```python
 import os, datetime
 ws = os.getcwd()
-path = os.path.join(ws, "research_result", "research_result/search_result.md")
+path = os.path.join(ws, "research_result", "search_result.md")
 target = 504                           # 目标总搜索次数（7 代理 × 72）
 header = (
     "# 搜索结果汇总 (search_result.md)\n\n"
@@ -503,7 +502,7 @@ open(path, "w", encoding="utf-8").write(header)
 ```python
 import os, datetime
 ws = os.getcwd()
-path = os.path.join(ws, "research_result", "research_result/search_result.md")
+path = os.path.join(ws, "research_result", "search_result.md")
 
 # agent_report      = 该搜索代理回传的结构化报告字符串
 # agent_search_count = 代理自报的本方向搜索次数（从报告第 3 项解析）

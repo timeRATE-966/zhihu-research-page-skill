@@ -63,13 +63,13 @@ npx skills add https://github.com/timeRATE-966/zhihu-research-page-skill
 
 ```bash
 git clone https://github.com/timeRATE-966/zhihu-research-page-skill.git
-cp -r zhihu-research-page/zhihu-research-page-skill ~/.claude/skills/zhihu-research-page
+cp -r zhihu-research-page-skill ~/.claude/skills/zhihu-research-page
 ```
 
 ### 项目级安装
 
 ```bash
-cp -r zhihu-research-page/zhihu-research-page-skill .claude/skills/zhihu-research-page
+cp -r zhihu-research-page-skill .claude/skills/zhihu-research-page
 ```
 
 ## 文件结构

@@ -113,7 +113,6 @@ def scan(drafts, verbose=True):
 
     return all_issues, stats
 
-
 def main():
     parser = argparse.ArgumentParser(description='HTML 章节草稿 <code> 标签预扫描')
     parser.add_argument('--fix', action='store_true', help='交互式修复 (TODO)')
@@ -140,7 +139,6 @@ def main():
         print("💡 建议：修复以上问题后运行 python ./other/assemble.py")
         return 1
     return 0
-
 
 if __name__ == '__main__':
     sys.exit(main())
