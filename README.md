@@ -75,11 +75,17 @@ cp -r zhihu-research-page-skill .claude/skills/zhihu-research-page
 ## 文件结构
 
 ```
-zhihu-research-page/
+zhihu-research-page-skill/
 ├── SKILL.md                          # 核心 Skill 定义
 ├── README.md                         # 本文件
 ├── LICENSE                           # MIT
 ├── TROUBLESHOOTING.md                # 12 类高频异常及处理
+├── CHANGELOG.md                      # 更新日志（v1 → v21）
+├── zhihu-research-page.skill         # 可分发的 Skill 包
+├── .gitignore
+├── .claude-plugin/
+│   ├── skill.json                    # Skill 元数据（名称/版本/标签）
+│   └── marketplace.json              # Marketplace 发布配置
 ├── templates/
 │   ├── writing_agent_prompt.md       # 章节撰写代理 Prompt
 │   ├── search_agent_prompt.md        # 搜索代理 Prompt
@@ -88,6 +94,11 @@ zhihu-research-page/
 │   ├── assemble.py                   # 拼接与自查脚本
 │   ├── scan_html.py                  # HTML <code> 标签预扫描
 │   └── wordcount_check.py            # 独立字数核验
+├── examples/
+│   ├── basic.md                      # 基础用法示例（2%~100%）
+│   └── advanced.md                   # 高级用法示例（200%/教程/迭代）
+├── tests/
+│   └── test.md                       # 测试用例（2%/100%/教程/空输入）
 └── references/
     └── css-template.css              # 知乎风格 CSS 模板
 ```
