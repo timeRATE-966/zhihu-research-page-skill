@@ -898,13 +898,17 @@ open('./other/index_skeleton.html', 'w', encoding='utf-8').write(html)
 
 **命名规则**：`{工作区文件夹名}_{ASCII 主题名}.html`
 - 文件夹名 = `basename(cwd)`，如 `v3_5pct`
-- ASCII 主题名 = 由阶段 1 拟定标题转写：中文→拼音、空格→`-`、去标点、≤32 字符
-- 例：`v3_5pct_Harness-Engineering.html`、`v1_A-Watch-Development-Guide.html`
+- ASCII 主题名 = 由阶段 1 拟定标题**意译成英文**：中文→英文（不是拼音）、单词首字母大写、空格→`-`、去标点、每个词首字母大写、≤32 字符
+- 例：
+  - 「什么是 Harness Engineering？」→ `v3_5pct_What-Is-Harness-Engineering.html`
+  - 「国际象棋怎么学？」→ `v2_How-to-Learn-Chess.html`
+  - 「各种调式的流行歌曲都有什么特点」→ `v2_Musical-Modes-in-Pop-Music.html`
+- 主题过长时保留核心词，删修饰语，确保 ≤32 字符
 
 ```bash
 python -X utf8 <skill_dir>/scripts/inline_images.py \
   --src index.html \
-  --topic Harness-Engineering
+  --topic What-Is-Harness-Engineering
 ```
 
 脚本行为：
