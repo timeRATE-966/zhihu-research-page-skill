@@ -19,10 +19,14 @@ npx skills add https://github.com/timeRATE-966/zhihu-research-page-skill
 ```
 /zhihu-research-page 执行2%版本
 主题：什么是 Harness Engineering？
+```
 
+```
 /zhihu-research-page 执行100%的v2版本
 主题：国际象棋怎么学？代数记谱法、西西里、西班牙主流开局这些是什么？
+```
 
+```
 /zhihu-research-page 执行200%的v2版本
 主题：各种调式的流行歌曲都有什么特点，它们各有什么代表作？
 ```
@@ -61,16 +65,13 @@ npx skills add https://github.com/timeRATE-966/zhihu-research-page-skill
 
 ### 手动安装
 
+克隆后手动放置于各Agent的skill目录，这里以Claude Code为例。
+
 ```bash
 git clone https://github.com/timeRATE-966/zhihu-research-page-skill.git
 cp -r zhihu-research-page-skill ~/.claude/skills/zhihu-research-page
 ```
 
-### 项目级安装
-
-```bash
-cp -r zhihu-research-page-skill .claude/skills/zhihu-research-page
-```
 
 ## 文件结构
 
