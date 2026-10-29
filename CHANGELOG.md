@@ -2,6 +2,49 @@
 
 ---
 
+## v22 — 2026-10-29（单文件 HTML 交付 + 可选上传资料库 + 三平台发布）
+
+### 新增文件
+- **`scripts/inline_images.py`** — 单文件 HTML 打包脚本
+  - 内嵌三类引用：`<img src>`、`<style>`/`style=` 内 `url()`、`<source srcset>`
+  - MIME 映射 png/jpeg/svg+xml/gif/webp/ico/bmp/avif
+  - 缺失图片保留原路径 + 打印清单，不中断
+  - **三重校验**通过才删除 `index.html`：`zh-header` + `</main>`、`<article id="ch-` 计数一致、`data:image/` 计数达标
+  - 失败时两个文件都保留，退出码 1
+
+### SKILL.md 改动
+- 阶段 7 重组：`7.1 结构校验 → 7.2 链接抽检 → 7.3 打包单文件 → 7.4 交付 → 7.5 可选上传资料库 → 7.6 工作记忆`
+- **7.3 打包单文件 HTML**：命名规则 `{工作区文件夹名}_{ASCII 主题名}.html`（中文→拼音、去标点、≤32 字符）
+- **7.5 可选上传资料库**：交付后主动询问一次 → 用户同意才调 `LibraryUpload`（绝对路径）；>100 MiB 直接跳过
+- 工作区目录约定：最终产物改为单文件 HTML，`index.html` 降级为中间产物（打包后删除，**不留副本**）
+- 阶段 0 输出路径参数同步
+- 工作流总览 `[7]` 改为「打包单文件 + 交付 + 可选上传资料库」
+- 质量规则新增 3 条（单文件交付 / 删除前校验 / 资料库上传）
+- 报错与降级新增 2 条（缺图 / 体积超限）
+- 资源文件新增 `scripts/inline_images.py`
+
+### frontmatter 补充（供 SkillHub 发布）
+- 新增 `slug: zhihu-research-page`、`displayName`、`summary`、`license: MIT`
+- `version` → `22.0.0`
+
+### TROUBLESHOOTING.md
+- 12 类 → 15 类：新增「单文件打包缺图」「单文件超 100 MiB」「删除 index.html 后需重生成」
+
+### 已发布平台
+- GitHub：`timeRATE-966/zhihu-research-page-skill`
+- ClawHub：`@timerate-966/zhihu-research-page-skill`
+- SkillHub：`@user_f9803b42/zhihu-research-page`
+
+---
+
+## v21 — 2026-07-21（教程/学习模式 + 自动同步 + 版本头）
+
+- 主题含教程/教学/学习路径/怎么做/入门时启用教程模式：提炼答主背景、必要时提问、搜索偏入门实战、写作按「跟着做就能上手」结构
+- 阶段 0 新增「自动同步检查」：对比 `<!-- VERSION -->` 与工作区 `.skill_version`，落后则归档旧脚本到 `./other/_OLD/{时间戳}/` 再复制新版
+- SKILL.md 顶部新增版本头 + 逐版本压缩更新日志（带秒级时间戳）
+
+---
+
 ## v20 — 2026-07-19（v2_1pct 实战日志 4 项修复）
 
 ### 修复 1（阻断性）：assemble.py f-string 转义引号 → SyntaxError
