@@ -5,7 +5,7 @@ Input: /zhihu-research-page 执行2%版本
 主题：什么是 Docker？
 Expected behavior:
   - 自动搜索 ≥10 次
-  - 生成 3 章节 HTML，约 2,000 字
+  - 生成含 3 个回答的 HTML，约 2,000 字
   - HTML 含 zh-header、zh-sidebar、zh-main 结构
   - 所有 <code> 标签开闭匹配
   - 约 2 分钟完成
@@ -15,7 +15,7 @@ Input: /zhihu-research-page 执行100%版本
 主题：Python 装饰器原理与应用
 Expected behavior:
   - 自动搜索 ≥500 次
-  - 生成 10 章节 HTML，每章 ≥11,000 字，总计 ≥100,000 字
+  - 生成 10 个回答的 HTML，每个回答 ≥11,000 字，总计 ≥100,000 字
   - 每章含独立答主身份和头像（DiceBear）
   - 侧栏导航与章节锚点一致
   - 无编造 URL，所有链接可验证

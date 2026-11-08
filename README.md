@@ -39,15 +39,15 @@ npx skills add https://github.com/timeRATE-966/zhihu-research-page-skill
 | ------------------------ | ------------------------------------------------------------------- |
 | **大规模搜索驱动** | 默认 ≥500 次真实 WebSearch，所有事实附可点击来源链接               |
 | **知乎风格还原**   | CSS 高度还原 zhihu.com 设计，含顶栏/侧栏/问题头/答主块/操作条       |
-| **10 章多答主**    | 每章独立答主身份与头像，模拟真实知乎多视角回答                      |
-| **自由剪裁**       | 支持任意 N% 版本（1% ~ 500%），等比缩减字数/搜索/章节数             |
+| **10 个回答多答主**    | 每个回答独立答主身份与头像，模拟真实知乎多视角回答                      |
+| **自由剪裁**       | 支持任意 N% 版本（1% ~ 500%），等比缩减字数/搜索/回答数             |
 | **版本管理**       | 多次执行自动创建`v{N}_{pct}pct/` 独立文件夹，主题保持一致         |
 | **教程模式**       | 自动识别学习/教程类主题，提炼答主背景，写作目标面向"跟着做就能上手" |
 | **自动自查**       | 组装阶段自动检测`<code>` 标签、CSS 颜色泄漏、字数达标等 5 项      |
 
 ## 剪裁比例参考
 
-| 比例 | 搜索次数 | 总字数    | 章节数 | 耗时      | 适用         |
+| 比例 | 搜索次数 | 总字数    | 回答数 | 耗时      | 适用         |
 | ---- | -------- | --------- | ------ | --------- | ------------ |
 | 2%   | ≥10     | ≥2,000   | 3      | ~2 分钟   | 极速检验效果 |
 | 5%   | ≥25     | ≥5,000   | 3      | ~5 分钟   | 快速验证     |
@@ -80,15 +80,24 @@ zhihu-research-page/
 ├── SKILL.md                          # 核心 Skill 定义
 ├── README.md                         # 本文件
 ├── LICENSE                           # MIT
-├── TROUBLESHOOTING.md                # 12 类高频异常及处理
+├── CHANGELOG.md                      # 版本更新日志
+├── TROUBLESHOOTING.md                # 15 类高频异常及处理
+├── .claude-plugin/
+│   └── marketplace.json              # Claude Code 插件市场元数据
 ├── templates/
-│   ├── writing_agent_prompt.md       # 章节撰写代理 Prompt
+│   ├── writing_agent_prompt.md       # 回答撰写代理 Prompt
 │   ├── search_agent_prompt.md        # 搜索代理 Prompt
 │   └── author_block.html             # 统一答主块模板
 ├── scripts/
 │   ├── assemble.py                   # 拼接与自查脚本
 │   ├── scan_html.py                  # HTML <code> 标签预扫描
-│   └── wordcount_check.py            # 独立字数核验
+│   ├── wordcount_check.py            # 独立字数核验
+│   └── inline_images.py              # 单文件打包（图片 base64 内嵌）
+├── examples/
+│   ├── basic.md                      # 基础用法示例
+│   └── advanced.md                   # 进阶用法示例
+├── tests/
+│   └── test.md                       # 自检清单
 └── references/
     └── css-template.css              # 知乎风格 CSS 模板
 ```
