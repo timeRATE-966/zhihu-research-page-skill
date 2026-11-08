@@ -2,7 +2,7 @@
 name: zhihu-research-page
 slug: zhihu-research-page
 displayName: "一键生成知乎高质量回答网页（可自由剪裁）"
-version: "22.0.0"
+version: "22.0.1"
 summary: "大规模联网搜索 + 知乎风深度知识网页生成，支持任意比例裁剪、单文件 HTML 交付"
 license: MIT
 title: "知乎研究页生成器 — 一句话生成知乎高质量回答网页"
